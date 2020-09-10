@@ -1,0 +1,36 @@
+ /*
+    	int num = entities.length;
+        Stack<T> st = new Stack<T>();
+        Map<T, Boolean> visited = new HashMap<T, Boolean>();
+        T[] ranking = (T[]) new Object[num];
+        num--;
+        //construct a new visited map with all values being false
+    	for (Entity ent: entities) {
+    		visited.put( (T) ent.getName(), false);
+    	}
+    	//start from the last vertex
+    	visited.put((T) entities[num].getName(), true);
+    	st.push((T) entities[num].getName());
+    	while (!st.isEmpty()) {
+    		T cur = (T) st.peek();
+    		//if all successors of c are visited 
+    		List<T> successor = this.graph.getAdjacentVerticesOf(cur);
+    		boolean allSuccessorsVisited = true;
+    		for (T s : successor) {
+    			if (!visited.get(s)) { //if it has an unvisited successor
+    				//select this successor as next
+    				visited.put(s, true);
+    				st.push(s);
+    				allSuccessorsVisited = false;
+    				break;
+    			}
+    		}
+    		//if all successors of cur are visited
+    		if (allSuccessorsVisited) {
+    			st.pop();
+    			ranking[num] = cur;
+    			num--;
+    		}
+    	}
+        return reverseRanking(ranking);
+	*/
